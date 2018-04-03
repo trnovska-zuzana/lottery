@@ -150,7 +150,7 @@ public class LotteryServiceImpl implements LotteryService {
 
     @Override
     public boolean validate(Ticket ticket) {
-        return (loadTicket(ticket).size() != 6);
+        return (loadTicket(ticket).size() == 6);
     }
 
     @Override
