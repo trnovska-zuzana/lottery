@@ -1,0 +1,34 @@
+<div th:fragment="messageBox" th:if="${messageBox != null}">
+
+    <div th:if="${!messageBox.error.isEmpty()}">
+        <th:block th:each="error : ${messageBox.error}">
+            <div class="message_error">
+                <span th:text="${error}"/>
+            </div>
+        </th:block>
+    </div>
+
+    <div th:if="${!messageBox.success.isEmpty()}">
+        <th:block th:each="success : ${messageBox.success}">
+            <div class="message_success">
+                <span th:text="${success}"/>
+            </div>
+        </th:block>
+    </div>
+
+    <div th:if="${!messageBox.info.isEmpty()}">
+        <th:block th:each="info : ${messageBox.info}">
+            <div class="message_info">
+                <span th:text="${info}"/>
+            </div>
+        </th:block>
+    </div>
+
+    <div th:if="${!messageBox.warn.isEmpty()}">
+        <th:block th:each="warn : ${messageBox.warn}">
+            <div class="message_warn">
+                <span th:text="${warn}"/>
+            </div>
+        </th:block>
+    </div>
+</div>

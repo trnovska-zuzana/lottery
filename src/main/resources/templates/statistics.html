@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script>
+        function filter(){
+            var playerName = document.getElementById("playerName").value;
+            var myURL = '/statistics?playerName=' + playerName;
+            return myURL;
+        };
+    </script>
+</head>
+<body>
+<p>
+    <a href="/"> back to homepage </a>
+</p>
+<input id="playerName"/>
+<input type="button" onclick="location.href=filter();" value="filter" />
+<th:block th:each="statistics : ${statisticsList}">
+    <p th:text="'Player ' + ${statistics.player}"/>
+    <p th:text="'Date and time ' + ${#temporals.format(statistics.finished, 'dd/MM/yyyy HH:mm:ss')}"/>
+    <p th:text="'Current balance ' + ${statistics.balance}"/>
+    <p th:text="'Number of attempts ' + ${statistics.attempts}"/>
+    <p th:text="'Statistics ' + ${statistics.numbersHitMap}"/>
+    <p th:text="'State ' + ${statistics.state}"/>
+    <br/>
+</th:block>
+</body>
+</html>

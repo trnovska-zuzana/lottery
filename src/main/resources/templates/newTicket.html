@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="../fragments/head :: head"/>
+<body>
+<form action="#" th:action="@{/newTicket}" th:object="${ticket}" method="post">
+       <div th:replace="../fragments/messageBox :: messageBox"/>
+    <!--/* TODO replace this table with normal html elements */-->
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td><input th:field="*{player}"/></td>
+            <td th:if="${#fields.hasErrors('player')}" th:errors="*{player}"></td>
+        </tr>
+        <tr>
+            <td>First number:</td>
+            <td><input type="number" th:field="*{firstNumber}"/></td>
+            <td th:if="${#fields.hasErrors('firstNumber')}" th:errors="*{firstNumber}"></td>
+        </tr>
+        <tr>
+            <td>Second number:</td>
+            <td><input type="number" th:field="*{secondNumber}"/></td>
+            <td th:if="${#fields.hasErrors('secondNumber')}" th:errors="*{secondNumber}"></td>
+        </tr>
+        <tr>
+            <td>Third number:</td>
+            <td><input type="number" th:field="*{thirdNumber}"/></td>
+            <td th:if="${#fields.hasErrors('thirdNumber')}" th:errors="*{thirdNumber}"></td>
+        </tr>
+        <tr>
+            <td>Fourth number:</td>
+            <td><input type="number" th:field="*{fourthNumber}"/></td>
+            <td th:if="${#fields.hasErrors('fourthNumber')}" th:errors="*{fourthNumber}"></td>
+        </tr>
+        <tr>
+            <td>Fifth number:</td>
+            <td><input type="number" th:field="*{fifthNumber}"/></td>
+            <td th:if="${#fields.hasErrors('fifthNumber')}" th:errors="*{fifthNumber}"></td>
+        </tr>
+        <tr>
+            <td>Sixth number:</td>
+            <td><input type="number" th:field="*{sixthNumber}"/></td>
+            <td th:if="${#fields.hasErrors('sixthNumber')}" th:errors="*{sixthNumber}"></td>
+        </tr>
+        <tr>
+            <td>Number of draws:</td>
+            <td><input type="number" th:field="*{draws}"/></td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit">Submit</button>
+            </td>
+        </tr>
+    </table>
+</form>
+<p>
+    <a href="/statistics"> statistics </a>
+</p>
+<p>
+    <a href="/"> back to homepage </a>
+</p>
+</body>
+</html>
