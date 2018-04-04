@@ -1,6 +1,7 @@
 # Lottery simulator
 
 A web application designed to show the futility of trying to win the lottery - inspired by the czech lottery game Sportka.
+
 Also a showcase of my skills as a java developer :)
 
 ## Getting started
@@ -27,15 +28,21 @@ The web application will start on a embedded tomcat server, with http web interf
 Submit a new ticket at http://localhost:8080/newTicket
 
 One draw costs 20 CZK.
+
 6 numbers from the range of 1-49 are randomly selected each draw.
+
 If you hit three of those numbers, you win 113 CZK
+
 If you hit four, you win 619 CZK
+
 If you hit five, you win 24 971 CZK
+
 If you hit all six, you win the jackpot - 15 382 198 CZK
 
 Otherwise you win nothing
 
 You can check the result at http://localhost:8080/statistics, where all results are available
+
 The following information is shown:
  - Player name
  - Timestamp of finishing the lottery process
@@ -50,7 +57,7 @@ The following information is shown:
 You can filter the results by player name
 
 ## TODO
- - Allow player to choose set his own lottery winnings
+ - Allow player to set his own lottery winnings
  - Add an option to play the lottery until the player wins the jackpot
  - Allow more advanced filtering on the statistics view - filter by time, allow users to sort the results, add a paginator
  - Show the frequency of hitting the winning numbers in some nicer way, instead of showing the map from code converted to string
